@@ -1,6 +1,8 @@
+// Sets open and close angles.
 let angle = 0
 let opened = 40
 let closed = 50
+// Pino 0 is light sensor.
 basic.forever(function () {
     led.plotBarGraph(
     input.lightLevel(),
@@ -8,6 +10,7 @@ basic.forever(function () {
     )
     pins.servoWritePin(AnalogPin.P0, input.lightLevel())
 })
+// Angle for servo to move.
 basic.forever(function () {
     led.plotBarGraph(
     input.lightLevel(),
