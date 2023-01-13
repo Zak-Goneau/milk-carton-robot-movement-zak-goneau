@@ -1,6 +1,6 @@
 let angle = 0
-let opened = 95
-let closed = 175
+let opened = 40
+let closed = 50
 basic.forever(function () {
     led.plotBarGraph(
     input.lightLevel(),
@@ -15,8 +15,8 @@ basic.forever(function () {
     )
     angle = pins.map(
     input.lightLevel(),
-    0,
-    255,
+    30,
+    50,
     opened,
     closed
     )
