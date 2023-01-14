@@ -2,7 +2,7 @@
 let angle = 0
 let opened = 40
 let closed = 50
-// Pino 0 is light sensor.
+// Pin 0 is light sensor.
 basic.forever(function () {
     led.plotBarGraph(
     input.lightLevel(),
