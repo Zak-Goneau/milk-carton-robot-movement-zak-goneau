@@ -1,27 +1,10 @@
-// Sets open and close angles.
-let angle = 0
-let opened = 40
-let closed = 50
-// Pin 0 is light sensor.
+// Sets open and closes angles.
+let opened = 90
+let closed = 270
+// Servo will automatically move to opened and clsoed angles.
 basic.forever(function () {
-    led.plotBarGraph(
-    input.lightLevel(),
-    0
-    )
-    pins.servoWritePin(AnalogPin.P0, input.lightLevel())
-})
-// Angle for servo to move.
-basic.forever(function () {
-    led.plotBarGraph(
-    input.lightLevel(),
-    0
-    )
-    angle = pins.map(
-    input.lightLevel(),
-    30,
-    50,
-    opened,
-    closed
-    )
-    pins.servoWritePin(AnalogPin.P0, angle)
+    servos.P0.setAngle(closed)
+    basic.pause(1000)
+    servos.P0.setAngle(opened)
+    basic.pause(1000)
 })
